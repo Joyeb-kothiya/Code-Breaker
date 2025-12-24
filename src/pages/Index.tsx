@@ -45,15 +45,15 @@ const Index = () => {
 
         {/* About Section */}
         <div className="text-center space-y-4">
-          <p className="text-lg text-foreground">Website created by Ziki</p>
+          <p className="text-lg text-foreground">Website created by Joyeb Kothiya</p>
           <a
-            href="https://www.instagram.com/ziki__01"
+            href="https://www.instagram.com/joyeb_29"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors glow-effect p-4 rounded-lg bg-card border border-border"
           >
             <Instagram size={24} />
-            <span>@ziki__01</span>
+            <span>@joyeb_29</span>
           </a>
         </div>
       </section>
@@ -62,14 +62,14 @@ const Index = () => {
       <footer className="py-8 px-4 border-t border-border/50">
         <div className="container mx-auto text-center">
           <p className="text-muted-foreground">
-            Website created with 💜 by Ziki — Follow me on Instagram{" "}
+            Website created with 💜 by Joyeb Kothiya — Follow me on Instagram{" "}
             <a
-              href="https://www.instagram.com/ziki__01"
+              href="https://www.instagram.com/joyeb_29"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline"
             >
-              @ziki__01
+              @joyeb_29
             </a>
           </p>
         </div>
