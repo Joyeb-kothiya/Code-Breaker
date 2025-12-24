@@ -14,8 +14,11 @@ const Index = () => {
         {/* Logo Section */}
         <div className="mb-12 animate-fade-in">
           <img
-            src="/ziki.jpg"
+            src="/ziki.png"
             alt="Logo"
+            width={192}
+            height={192}
+            loading="eager"
             className="w-48 h-48 rounded-full object-cover shadow-lg border-4 border-primary/30"
           />
         </div>
