@@ -16,6 +16,11 @@ import DfsUnit1 from "./pages/DfsUnit1";
 import DfsUnit2 from "./pages/DfsUnit2";
 import DfsUnit3 from "./pages/DfsUnit3";
 import DfsSection from "./pages/DfsSection";
+import CppOverviewII from "./pages/CppOverviewII";
+import DfsOverviewII from "./pages/DfsOverviewII";
+import CppUnit1II from "./pages/CppUnit1II";
+import CppSectionII from "./pages/CppSectionII";
+import DfsUnit1II from "./pages/DfsUnit1II";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +46,11 @@ const App = () => (
           <Route path="/semester3/dfs-unit2" element={<DfsUnit2 />} />
           <Route path="/semester3/dfs-unit3" element={<DfsUnit3 />} />
           <Route path="/semester3/dfs-unit3/:section" element={<DfsSection />} />
+          <Route path="/semester4/cpp" element={<CppOverviewII />} />
+          <Route path="/semester4/dfs" element={<DfsOverviewII />} />
+          <Route path="/semester4/cpp-unit1" element={<CppUnit1II />} />
+          <Route path="/semester4/cpp-unit1/:section" element={<CppSectionII />} />
+          <Route path="/semester4/dfs-unit1" element={<DfsUnit1II />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

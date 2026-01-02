@@ -38,7 +38,7 @@ const Index = () => {
           />
           <RedirectCard
             title="Semester 4"
-            description="Coming soon... Stay tuned!"
+            description="C++ II and DFS II program collections"
             to="/semester4"
           />
         </div>
