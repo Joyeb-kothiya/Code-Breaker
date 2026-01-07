@@ -5,10 +5,10 @@ import ProgramCard from "@/components/ProgramCard";
 import BackButton from "@/components/BackButton";
 
 const CppUnit1 = () => {
-  const programs = [
-    {
-      title: "Time Input/Output",
-      code: `#include <iostream>
+	const programs = [
+		{
+			title: "Time Input/Output",
+			code: `#include <iostream>
 using namespace std;
  
 class input
@@ -38,10 +38,10 @@ int main()
 	
 	return 0;
 }`
-    },
-    {
-      title: "Date Input/Output",
-      code: `#include<iostream>
+		},
+		{
+			title: "Date Input/Output",
+			code: `#include<iostream>
 using namespace std;
 
 class input
@@ -71,10 +71,10 @@ int main()
 	
 	return 0;
 }`
-    },
-    {
-      title: "Temperature Converter (Celsius to Fahrenheit)",
-      code: `#include<iostream>
+		},
+		{
+			title: "Temperature Converter (Celsius to Fahrenheit)",
+			code: `#include<iostream>
 using namespace std;
 
 class temperature
@@ -101,10 +101,10 @@ int main()
 	k.display();
 	return 0;
 }`
-    },
-    {
-      title: "Student Marksheet",
-      code: `#include<iostream>
+		},
+		{
+			title: "Student Marksheet",
+			code: `#include<iostream>
 #include<string> // Include for std::string
 using namespace std;
 
@@ -151,10 +151,10 @@ int main()
 	k.display();
 	return 0;
 }`
-    },
-    {
-      title: "Employee Salary Management",
-      code: `#include<iostream>
+		},
+		{
+			title: "Employee Salary Management",
+			code: `#include<iostream>
 #include<string>
 using namespace std;
 
@@ -196,10 +196,10 @@ int main()
 	k.display();
 	return 0;
 }`
-    },
-    {
-      title: "Parking Charges Calculator",
-      code: `#include<iostream>
+		},
+		{
+			title: "Parking Charges Calculator",
+			code: `#include<iostream>
 using namespace std;
 
 class parking
@@ -235,10 +235,10 @@ int main()
 	k.display();
 	return 0;
 }`
-    },
-    {
-      title: "Temperature Check",
-      code: `#include<iostream>
+		},
+		{
+			title: "Temperature Check",
+			code: `#include<iostream>
 using namespace std;
 
 class temperature
@@ -275,10 +275,10 @@ int main()
   k.display();
   return 0;
 }`
-    },
-    {
-      title: "Product Discount Calculator",
-      code: `#include<iostream>
+		},
+		{
+			title: "Product Discount Calculator",
+			code: `#include<iostream>
 #include<string>
 using namespace std;
 
@@ -315,10 +315,10 @@ int main()
 	k.display();
 	return 0;
 }`
-    },
-    {
-      title: "Speed Checker",
-      code: `#include<iostream>
+		},
+		{
+			title: "Speed Checker",
+			code: `#include<iostream>
 using namespace std;
 
 class speed
@@ -355,10 +355,10 @@ int main()
 	s.display();
 	return 0;
 }`
-    },
-    {
-      title: "Voting Eligibility Checker",
-      code: `#include<iostream>
+		},
+		{
+			title: "Voting Eligibility Checker",
+			code: `#include<iostream>
 #include<string>
 using namespace std;
 
@@ -399,10 +399,10 @@ int main()
   k.display();
   return 0;
 }`
-    },
-    {
-      title: "BMI Calculator",
-      code: `#include<iostream>
+		},
+		{
+			title: "BMI Calculator",
+			code: `#include<iostream>
 #include<string>
 using namespace std;
 
@@ -457,10 +457,10 @@ int main()
   k.display();
   return 0;
 }`
-    },
-    {
-      title: "Age Group Classifier",
-      code: `#include<iostream>
+		},
+		{
+			title: "Age Group Classifier",
+			code: `#include<iostream>
 #include<string>
 using namespace std;
 
@@ -508,10 +508,10 @@ int main()
   k.display();
   return 0;
 }`
-    },
-    {
-      title: "Student Attendance Checker",
-      code: `#include<iostream>
+		},
+		{
+			title: "Student Attendance Checker",
+			code: `#include<iostream>
 #include<string>
 using namespace std;
 
@@ -563,10 +563,10 @@ int main()
   j.display();
   return 0;
 }`
-    },
-    {
-      title: "Shopping Bill Calculator",
-      code: `#include<iostream>
+		},
+		{
+			title: "Shopping Bill Calculator",
+			code: `#include<iostream>
 #include<string>
 using namespace std;
 
@@ -604,31 +604,31 @@ int main()
   j.display();
   return 0;
 }`
-    }
-  ];
+		}
+	];
 
-  return (
-    <div className="min-h-screen">
-      <CodingBackground />
-      <Navigation />
+	return (
+		<div className="min-h-screen">
+			<CodingBackground />
+			<Navigation />
 
-      <section className="py-20 px-4 container mx-auto pt-24">
-        <div className="max-w-4xl mx-auto">
-          <BackButton />
-          <h1 className="text-4xl font-bold mb-4 text-center text-primary">C++ Unit 1</h1>
-          <p className="text-center text-muted-foreground mb-12">14 programs</p>
+			<section className="py-20 px-4 container mx-auto pt-24">
+				<div className="max-w-4xl mx-auto">
+					<BackButton />
+					<h1 className="text-4xl font-bold mb-4 text-center text-primary">C++ Unit 1</h1>
+					<p className="text-center text-muted-foreground mb-12">14 programs</p>
 
-          <div className="space-y-4">
-            {programs.map((program, i) => (
-              <CollapsibleSection key={i} title={`Program ${i + 1}: ${program.title}`} count={1}>
-                <ProgramCard number={i + 1} title={program.title} code={program.code} fileExtension="cpp" />
-              </CollapsibleSection>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+					<div className="space-y-4">
+						{programs.map((program, i) => (
+							<CollapsibleSection key={i} title={`Program ${i + 1}: ${program.title}`} count={1}>
+								<ProgramCard number={i + 1} title={program.title} code={program.code} fileExtension="cpp" />
+							</CollapsibleSection>
+						))}
+					</div>
+				</div>
+			</section>
+		</div>
+	);
 };
 
 export default CppUnit1;

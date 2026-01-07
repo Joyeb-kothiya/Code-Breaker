@@ -10,6 +10,10 @@ const CppUnit1II = () => {
     { name: "Multiple Inheritance", count: 5, slug: "multiple" },
     { name: "Hierarchical Inheritance", count: 5, slug: "hierarchical" },
     { name: "Hybrid Inheritance", count: 5, slug: "hybrid" },
+    { name: "Constructor in Derived Class", count: 5, slug: "constructor-derived" },
+    { name: "Nesting of Class", count: 5, slug: "nesting-class" },
+    { name: "Abstract Class", count: 5, slug: "abstract-class" },
+    { name: "Virtual Base Class", count: 5, slug: "virtual-base-class" },
   ];
 
   return (
@@ -21,17 +25,17 @@ const CppUnit1II = () => {
         <div className="max-w-4xl mx-auto">
           <BackButton />
           <h1 className="text-4xl font-bold mb-4 text-center text-primary">C++ II Unit 1</h1>
-          <p className="text-center text-muted-foreground mb-12">5 sections</p>
+          <p className="text-center text-muted-foreground mb-12">9 sections</p>
 
           <div className="space-y-6">
-          {sections.map((section) => (
-            <RedirectCard
-              key={section.slug}
-              title={section.name}
-              description={`${section.count} programs`}
-              to={`/semester4/cpp-unit1/${section.slug}`}
-            />
-          ))}
+            {sections.map((section) => (
+              <RedirectCard
+                key={section.slug}
+                title={section.name}
+                description={`${section.count} programs`}
+                to={`/semester4/cpp-unit1/${section.slug}`}
+              />
+            ))}
           </div>
         </div>
       </section>

@@ -16,15 +16,15 @@ const CppOverviewII = () => {
           <p className="text-center text-muted-foreground mb-12">All C++ II units and sections</p>
 
           <div className="space-y-12">
-          <RedirectCard title="C++ II Unit 1" description="5 sections" to="/semester4/cpp-unit1" />
-          <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border-2 border-primary/30 p-8 text-center">
-            <h2 className="text-3xl font-bold text-primary mb-2">C++ II Unit 2</h2>
-            <p className="text-muted-foreground">Coming soon...</p>
-          </div>
-          <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border-2 border-primary/30 p-8 text-center">
-            <h2 className="text-3xl font-bold text-primary mb-2">C++ II Unit 3</h2>
-            <p className="text-muted-foreground">Coming soon...</p>
-          </div>
+            <RedirectCard title="C++ II Unit 1" description="9 sections" to="/semester4/cpp-unit1" />
+            <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border-2 border-primary/30 p-8 text-center">
+              <h2 className="text-3xl font-bold text-primary mb-2">C++ II Unit 2</h2>
+              <p className="text-muted-foreground">Coming soon...</p>
+            </div>
+            <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border-2 border-primary/30 p-8 text-center">
+              <h2 className="text-3xl font-bold text-primary mb-2">C++ II Unit 3</h2>
+              <p className="text-muted-foreground">Coming soon...</p>
+            </div>
           </div>
         </div>
       </section>
