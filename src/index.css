@@ -1,54 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 270 15% 8%;
-    --foreground: 210 40% 95%;
+    --background: 220 20% 97%;
+    --foreground: 220 20% 10%;
 
-    --card: 270 12% 12%;
-    --card-foreground: 210 40% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
 
-    --popover: 270 12% 12%;
-    --popover-foreground: 210 40% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
 
-    --primary: 190 95% 55%;
-    --primary-foreground: 270 15% 8%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 50% 45%;
-    --secondary-foreground: 210 40% 95%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 20%;
 
-    --muted: 270 10% 18%;
-    --muted-foreground: 210 15% 60%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
 
-    --accent: 280 65% 60%;
-    --accent-foreground: 210 40% 95%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 270 15% 20%;
-    --input: 270 12% 16%;
-    --ring: 190 95% 55%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 142 76% 36%;
 
     --radius: 0.75rem;
 
-    --code-bg: 270 10% 10%;
-    --glow-cyan: 190 95% 55%;
-    --glow-purple: 280 65% 60%;
+    --terminal-bg: 220 16% 12%;
+    --terminal-header: 220 16% 16%;
+    --terminal-text: 142 70% 60%;
+  }
 
-    --gradient-hero: linear-gradient(135deg, hsl(270 15% 8%), hsl(280 40% 15%));
-    --gradient-card: linear-gradient(135deg, hsl(270 12% 12%), hsl(270 15% 14%));
-    
-    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
-    --shadow-glow-hover: 0 0 40px hsl(var(--primary) / 0.5);
-    
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  .dark {
+    --background: 220 16% 6%;
+    --foreground: 220 20% 95%;
+
+    --card: 220 16% 10%;
+    --card-foreground: 220 20% 95%;
+
+    --popover: 220 16% 10%;
+    --popover-foreground: 220 20% 95%;
+
+    --primary: 142 70% 45%;
+    --primary-foreground: 220 16% 6%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 220 20% 90%;
+
+    --muted: 220 16% 16%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 262 83% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 220 16% 6%;
+
+    --border: 220 16% 18%;
+    --input: 220 16% 18%;
+    --ring: 142 70% 45%;
+
+    --terminal-bg: 220 20% 8%;
+    --terminal-header: 220 16% 12%;
+    --terminal-text: 142 70% 60%;
   }
 }
 
@@ -58,7 +94,7 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
@@ -68,29 +104,123 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  .code-block {
-    @apply bg-[hsl(var(--code-bg))] rounded-lg p-4 font-mono text-sm text-muted-foreground border border-border;
+  .terminal {
+    @apply bg-[hsl(var(--terminal-bg))] rounded-xl overflow-hidden border border-border/50;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  }
+
+  .terminal-header {
+    @apply bg-[hsl(var(--terminal-header))] px-4 py-3 flex items-center gap-2 border-b border-border/30;
+  }
+
+  .terminal-dot {
+    @apply w-3 h-3 rounded-full;
+  }
+
+  .terminal-body {
+    @apply p-4 font-mono text-sm leading-relaxed;
+  }
+
+  .terminal-line {
+    @apply flex items-start gap-2 mb-1;
+  }
+
+  .terminal-prompt {
+    @apply text-[hsl(var(--terminal-text))] select-none shrink-0;
+  }
+
+  .terminal-output {
+    @apply text-foreground/90;
+  }
+
+  .output-success {
+    @apply text-[hsl(var(--success))];
+  }
+
+  .output-error {
+    @apply text-[hsl(var(--destructive))];
+  }
+
+  .output-warning {
+    @apply text-[hsl(var(--warning))];
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-2xl;
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1), 0 2px 8px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
   }
 
   .glow-effect {
-    box-shadow: var(--shadow-glow);
-    transition: var(--transition-smooth);
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.2);
+    transition: all 0.3s ease;
   }
 
   .glow-effect:hover {
-    box-shadow: var(--shadow-glow-hover);
+    box-shadow: 0 0 50px hsl(var(--primary) / 0.35);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
 
-  .nav-link {
-    @apply relative transition-all duration-300 hover:text-primary;
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 
-  .nav-link::after {
-    content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
 
-  .nav-link:hover::after {
-    @apply w-full;
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  .typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(40, end);
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
+  .code-block {
+    @apply glass-card p-6;
   }
 }
