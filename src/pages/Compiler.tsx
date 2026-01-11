@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { 
   Terminal, 
   Play, 
@@ -50,8 +50,12 @@ int main() {
 };
 
 const Compiler = () => {
-  const [language, setLanguage] = useState<'c' | 'cpp'>("cpp");
-  const [code, setCode] = useState(getDefaultCode("cpp"));
+  const location = useLocation();
+  const initialCode = location.state?.code;
+  const initialLang = location.state?.language || "cpp";
+  
+  const [language, setLanguage] = useState<'c' | 'cpp'>(initialLang);
+  const [code, setCode] = useState(initialCode || getDefaultCode(initialLang));
   const [input, setInput] = useState("");
   const [isCompiling, setIsCompiling] = useState(false);
   const [result, setResult] = useState<CompileResponse | null>(null);

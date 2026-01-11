@@ -1,4 +1,4 @@
-import { Copy, Download, Play, Clock, Eye } from "lucide-react";
+import { Copy, Download, Play, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
@@ -164,31 +164,23 @@ const ProgramCard = ({
           </>
         )}
 
-        {/* Run Program - Coming Soon */}
-        <Tooltip>
-          <TooltipTrigger asChild>
+        {/* Run Program - Links to Compiler */}
+        {code && (
+          <Link 
+            to="/compiler" 
+            state={{ code, language: fileExtension === "cpp" ? "cpp" : "c" }}
+            className="ml-auto"
+          >
             <Button 
               variant="outline" 
               size="sm" 
-              className="gap-2 ml-auto opacity-60 cursor-not-allowed"
-              disabled
+              className="gap-2"
             >
-              <Clock className="w-4 h-4 text-warning" />
+              <Play className="w-4 h-4 text-primary" />
               Run Program
             </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Real-time compilation coming soon</p>
-          </TooltipContent>
-        </Tooltip>
-      </div>
-
-      {/* Output Console Placeholder */}
-      <div className="mt-4 p-4 rounded-lg bg-muted/30 border border-border/50">
-        <div className="flex items-center gap-2 text-muted-foreground">
-          <Clock className="w-4 h-4 text-warning" />
-          <span className="text-sm">Output console — coming soon</span>
-        </div>
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BookOpen, Code2, ArrowRight, Sparkles, Terminal, Clock } from "lucide-react";
+import { BookOpen, Code2, ArrowRight, Sparkles, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/ziki/Header";
 import Footer from "@/components/ziki/Footer";
@@ -65,12 +65,6 @@ const Index = () => {
             {/* Live Compiler Card */}
             <Link to="/compiler" className="group">
               <div className="glass-card p-8 h-full transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl relative overflow-hidden">
-                {/* Coming Soon Badge */}
-                <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warning/10 border border-warning/20">
-                  <Clock className="w-3.5 h-3.5 text-warning" />
-                  <span className="text-xs font-medium text-warning">Coming Soon</span>
-                </div>
-                
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-accent/70 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Terminal className="w-8 h-8 text-accent-foreground" />
                 </div>
